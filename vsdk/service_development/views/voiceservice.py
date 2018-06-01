@@ -24,9 +24,9 @@ def voice_service_start(request, voice_service_id, session_id = None):
     """
     voice_service = get_object_or_404(VoiceService, pk=voice_service_id)
 
-    if not voice_service.active:
+    #if not voice_service.active:
         # TODO give a nicer error message
-        raise Http404()
+        #raise Http404()
 
     caller_id = get_caller_id_from_GET_request(request)
     session = lookup_or_create_session(voice_service, session_id, caller_id)
